@@ -1,0 +1,24 @@
+//Nhap vao mang n so:
+#include<stdio.h>
+void main(){
+int n;
+printf("Nhap n: ");
+scanf("%d",&n);
+int i/*,a[n]*/,*p;
+//p=a;
+p=(int*)malloc(n*sizeof(int));
+for(i=0;i<n;i++)
+{
+    printf("\nNhap A[%d]=",i+1);
+    scanf("%d",p+i);
+}
+printf("\nso ban nhap la:\n");
+for(i=0;i<n;i++)
+{
+    printf("%3d",*(p+i));
+}
+
+}
+
+
+
