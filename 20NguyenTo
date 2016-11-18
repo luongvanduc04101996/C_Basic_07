@@ -1,0 +1,35 @@
+//Dem co bnhiu so nguyen to tu 1->N?
+#include<stdio.h>
+void main(){
+int n;
+printf("Nhap n:\n");
+scanf("%d",&n);
+int i,*p/*,a[n]*/,dem=-1;
+//p=a;
+p=(int*)malloc(n*sizeof(int));
+int KiemTraNT(int kt){
+    int i;
+    for(i=2;i<=kt/2;i++)
+    {
+        if(kt%i==0)
+            return;
+    }
+    return 1;
+}
+
+for(i=2;i<=n;i++)
+{
+    if(KiemTraNT(i)==1)
+    {
+        dem++;
+        *(p+dem)=i;
+    }
+    else continue;
+}
+printf("Co %d so nguyen to tu 1->%d",dem+1,n);
+printf("\nCac so nguyen to:\n");
+for(i=0;i<=dem;i++)
+{
+    printf("%4d",*(p+i));
+}
+}
