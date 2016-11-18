@@ -1,0 +1,13 @@
+//Cac so chia het cho K tu 1->N?
+#include<stdio.h>
+void main(){
+int n,k,i;
+printf("Nhap n va k: \n");
+scanf("%d%d",&n,&k);
+printf("Cac so chia het cho k tu 1->%d la: ",n);
+for(i=k;i<=n;i++)
+{
+    if(i%k==0)
+        printf("%d ",i);
+}
+}
