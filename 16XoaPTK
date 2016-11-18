@@ -1,0 +1,46 @@
+//Xoa phan tu k trong mang ?
+#include<stdio.h>
+void main(){
+int n,j,dem=0;
+printf("Nhap n:\n");
+scanf("%d",&n);
+int i,*p,k;//,xl;
+//xl=n;
+p=(int*)malloc(n*sizeof(int));
+for(i=0;i<n;i++)
+{
+    printf("Nhap A[%d]=",i+1);
+    scanf("%d",p+i);
+}
+printf("Day ban nhap:\n");
+for(i=0;i<n;i++)
+{
+    printf("%d\t",*(p+i));
+}
+printf("\nNhap so can xoa k = ");
+scanf("%d",&k);
+for(i=0;i<n;i++)
+{
+    if(*(p+i)==k)
+    {
+        dem++;
+        for(j=i;j<n-1;j++)
+        {
+            *(p+j)=*(p+j+1);
+        }
+        i--;
+        //xl--;
+        //p=(int*)realloc(p,xl*sizeof(int));
+        if(i==n-dem-1)
+            break;
+    }
+}
+//printf("%d",dem);
+n=n-dem;
+p=(int*)realloc(p,n*sizeof(int));
+printf("Sau khi xoa:\n");
+for(i=0;i<n;i++)
+{
+    printf("%d\t",*(p+i));
+}
+}
